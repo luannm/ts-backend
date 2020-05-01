@@ -6,7 +6,9 @@
     "babel-node": "babel-node",
     "build": "./node_modules/.bin/babel src --out-dir dist/src --copy-files",
     "eslint": "./node_modules/.bin/eslint src/**/*.js",
-    "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix"
+    "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -41,9 +43,11 @@
     "bluebird": "^3.5.0",
     "lodash": "^4.17.4",
     "source-map-support": "^0.4.15",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "snyk": "^1.316.1"
   },
   "pre-commit": [
     "eslint"
-  ]
+  ],
+  "snyk": true
 }
